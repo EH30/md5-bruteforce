@@ -41,18 +41,6 @@ class jeh{
 
     }
 
-    public static void file_writer(String data){
-        File file = new File("EH.txt");
-
-        try {
-            FileWriter ap = new FileWriter(file, true);
-            ap.write(data + "\n");
-            ap.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-    }
     public static void combo(int max, char[] chr, String data, String hashed){
         if (data.length() == max){
             //System.out.println(crypto(data) + ": " + hashed + ":" + data);
