@@ -9,6 +9,15 @@ import java.math.BigInteger;
 
 class jeh{
     
+    public String match(String match0, String match1){
+        if (match0 == match1){
+            return "matched";
+        }else{
+            return "not Matched";
+        }
+
+    }
+
     public static String crypto(String str){
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -32,11 +41,23 @@ class jeh{
 
     }
 
+    public static void file_writer(String data){
+        File file = new File("EH.txt");
+
+        try {
+            FileWriter ap = new FileWriter(file, true);
+            ap.write(data + "\n");
+            ap.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
     public static void combo(int max, char[] chr, String data, String hashed){
         if (data.length() == max){
             //System.out.println(crypto(data) + ": " + hashed + ":" + data);
 
-            if (hashed.trim().equals(crypto(data))){
+            if (hashed.trim().equals(crypto(data)) | hashed.trim().equals(crypto(data).toUpperCase())){
                 System.out.println("Cracked: "+ data);
                 System.exit(1);
             }
